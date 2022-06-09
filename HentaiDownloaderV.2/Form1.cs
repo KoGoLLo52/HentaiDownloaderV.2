@@ -22,7 +22,6 @@ namespace HentaiDownloaderV._2
             InitializeComponent();
             HDownloader = new HDownloader();
             Path.Text = Settings.Default.DestinoDescargas;
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -48,6 +47,7 @@ namespace HentaiDownloaderV._2
             {
                 await HDownloader.HentaiP(links[i], Path.Text);
             }
+            MessageBox.Show(string.Format("Download Complete"));
         }
         private void Path_Click(object sender, EventArgs e)
         {

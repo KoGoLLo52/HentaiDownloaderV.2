@@ -12,10 +12,13 @@ namespace HentaiDownloaderV._2
     internal class HDownloader
     {
         public HttpClient client = new HttpClient();
+        
         string imgurl = "https://";
 
         public async Task HentaiP(string url, string path)
         {
+            client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36");
+
             await Task.Run(async () =>
             {
                 var doc = new HtmlWeb();
